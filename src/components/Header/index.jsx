@@ -37,7 +37,8 @@ const Header = () => {
     ), [ classes, text ]);
 
     return (
-        <header className={classNames(classes.header, display.px, display.flex, display.alignCenter, display.justifyBetween)}>
+        <header className={classNames(classes.header, display.px, display.flex, display.alignCenter, display.justifyBetween,
+            responsive.smJustifyStart)}>
             <div className={classNames(display.alignCenter, display.flex, display.justifyBetween, display.w100, responsive.smWAuto)}>
                 <Link to="/" className={classNames(classes.logoContainer)}>
                     <img 
@@ -53,7 +54,7 @@ const Header = () => {
                 </Hidden>
             </div>
             <Hidden smDown>
-                <nav>
+                <nav className={classNames(responsive.smMl3)}>
                     <ul 
                         className={classNames(classes.headerNavList, display.flex, display.alignCenter)}>
                         { getList() }
