@@ -55,7 +55,9 @@ export const useStyles = makeStyles(theme => ({
         }
     },
     drawerPaper: {
-        backgroundColor: '#000 !important',
-        top: '64px !important'
+        backgroundColor: '#979797 !important',
+        height: 'auto !important',
+        top: '64px !important',
+        width: '85%'
     },
 }));
