@@ -100,7 +100,7 @@ const Home = () => {
                 </Hidden>
             </section>
             <section className={classNames(classes.px, classes.smallTeamSection, bg.cover, bg.center, bg.noRepeat,
-                display.flex, display.flexColumn, display.justifyCenter)}>
+                display.flex, display.flexColumn, display.justifyCenter, display.mt3, display.mb3)}>
                 <Typography component="h2" variant="h4" className={classNames(text.textLight, text.font7, classes.smallTeamSectionTitle)}>
                     Small team,<br/>big ideas
                 </Typography>
