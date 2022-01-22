@@ -93,5 +93,18 @@ export const useStyles = makeStyles(theme => ({
     },
     selectedIndicator: {
         backgroundColor: '#1B1D23 !important'
+    },
+    introTitleBar: {
+        '&::before': {
+            backgroundColor: '#C8CCD8',
+            content: '""',
+            display: 'block',
+            height: 1,
+            marginBottom: '2.4rem',
+            width: 90
+        }
+    },
+    introDescription: {
+        color: '#60636D'
     }
 }));
