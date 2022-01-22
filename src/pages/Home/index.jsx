@@ -99,6 +99,20 @@ const Home = () => {
                     <div className={classNames(bg.cover, bg.center, bg.noRepeat, classes.introIllustration)}></div>
                 </Hidden>
             </section>
+            <section className={classNames(classes.px, classes.smallTeamSection, bg.cover, bg.center, bg.noRepeat,
+                display.flex, display.flexColumn, display.justifyCenter)}>
+                <Typography component="h2" variant="h4" className={classNames(text.textLight, text.font7, classes.smallTeamSectionTitle)}>
+                    Small team,<br/>big ideas
+                </Typography>
+                <Link to="/portfolio" className={classNames(text.noUnderline, display.mt2)}>
+                    <Button 
+                        endIcon={<ArrowForwardIcon />}
+                        variant="contained"
+                        className={classNames(classes.heroButton)}>
+                        About us
+                    </Button>
+                </Link>
+            </section>
         </main>
     )
 };

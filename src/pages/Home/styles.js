@@ -3,19 +3,23 @@ import paramourImage from '../../assets/images/home/mobile/image-hero-paramour.j
 import federalImage from '../../assets/images/home/mobile/image-hero-federal.jpg'
 import seraphImage from '../../assets/images/home/mobile/image-hero-seraph.jpg'
 import trinityImage from '../../assets/images/home/mobile/image-hero-trinity.jpg'
+import smallTeam from '../../assets/images/home/mobile/image-small-team.jpg'
 
 import paramourTabletImage from '../../assets/images/home/tablet/image-hero-paramour.jpg'
 import federalTabletImage from '../../assets/images/home/tablet/image-hero-federal.jpg'
 import seraphTabletImage from '../../assets/images/home/tablet/image-hero-seraph.jpg'
 import trinityTabletImage from '../../assets/images/home/tablet/image-hero-trinity.jpg'
+import smallTeamTabletImage from '../../assets/images/home/tablet/image-small-team.jpg'
 
 import paramourDesktopImage from '../../assets/images/home/desktop/image-hero-paramour.jpg'
 import federalDesktopImage from '../../assets/images/home/desktop/image-hero-federal.jpg'
 import seraphDesktopImage from '../../assets/images/home/desktop/image-hero-seraph.jpg'
 import trinityDesktopImage from '../../assets/images/home/desktop/image-hero-trinity.jpg'
 import welcomeDesktopImage from '../../assets/images/home/desktop/image-welcome.jpg'
+import smallTeamDesktopImage from '../../assets/images/home/desktop/image-small-team.jpg'
 
 const linearGradient = 'linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, .1))'
+const linearGradientDesktop = 'linear-gradient(to right, rgba(0, 0, 0, .4), rgba(0, 0, 0, .1))'
 export const useStyles = makeStyles(theme => ({
     main: {
         [theme.breakpoints.up('sm')]: {
@@ -40,7 +44,7 @@ export const useStyles = makeStyles(theme => ({
             backgroundImage: `${linearGradient}, url(${paramourTabletImage})`,
         },
         [theme.breakpoints.up('md')]: {
-            backgroundImage: `${linearGradient}, url(${paramourDesktopImage})`,
+            backgroundImage: `${linearGradientDesktop}, url(${paramourDesktopImage})`,
         }
     },
     federalTowerHero: {
@@ -49,7 +53,7 @@ export const useStyles = makeStyles(theme => ({
             backgroundImage: `${linearGradient}, url(${federalTabletImage})`,
         },
         [theme.breakpoints.up('md')]: {
-            backgroundImage: `${linearGradient}, url(${federalDesktopImage})`,
+            backgroundImage: `${linearGradientDesktop}, url(${federalDesktopImage})`,
         }
     },
     seraphStationHero: {
@@ -58,7 +62,7 @@ export const useStyles = makeStyles(theme => ({
             backgroundImage: `${linearGradient}, url(${seraphTabletImage})`,
         },
         [theme.breakpoints.up('md')]: {
-            backgroundImage: `${linearGradient}, url(${seraphDesktopImage})`,
+            backgroundImage: `${linearGradientDesktop}, url(${seraphDesktopImage})`,
         }
     },
     bankTowerHero: {
@@ -67,7 +71,7 @@ export const useStyles = makeStyles(theme => ({
             backgroundImage: `${linearGradient}, url(${trinityTabletImage})`,
         },
         [theme.breakpoints.up('md')]: {
-            backgroundImage: `${linearGradient}, url(${trinityDesktopImage})`,
+            backgroundImage: `${linearGradientDesktop}, url(${trinityDesktopImage})`,
         }
     },
     heroDescription: {
@@ -137,5 +141,16 @@ export const useStyles = makeStyles(theme => ({
         backgroundImage: `url(${welcomeDesktopImage})`,
         height: 500,
         width: 400
+    },
+    smallTeamSection: {
+        backgroundImage: `${linearGradient}, url(${smallTeam})`,
+        height: 400,
+        [theme.breakpoints.up('sm')]: {
+            backgroundImage: `${linearGradient}, url(${smallTeamTabletImage})`,
+        },
+        [theme.breakpoints.up('md')]: {
+            backgroundImage: `${linearGradientDesktop}, url(${smallTeamDesktopImage})`,
+            height: 450,
+        }
     }
 }));
