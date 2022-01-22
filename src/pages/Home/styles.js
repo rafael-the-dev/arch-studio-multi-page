@@ -13,6 +13,7 @@ import paramourDesktopImage from '../../assets/images/home/desktop/image-hero-pa
 import federalDesktopImage from '../../assets/images/home/desktop/image-hero-federal.jpg'
 import seraphDesktopImage from '../../assets/images/home/desktop/image-hero-seraph.jpg'
 import trinityDesktopImage from '../../assets/images/home/desktop/image-hero-trinity.jpg'
+import welcomeDesktopImage from '../../assets/images/home/desktop/image-welcome.jpg'
 
 const linearGradient = 'linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, .1))'
 export const useStyles = makeStyles(theme => ({
@@ -94,6 +95,17 @@ export const useStyles = makeStyles(theme => ({
     selectedIndicator: {
         backgroundColor: '#1B1D23 !important'
     },
+    welcomeSection: {
+        [theme.breakpoints.up('md')]: {
+            display: 'flex',
+            paddingRight: 0
+        }
+    },
+    welcomeContent: {
+        [theme.breakpoints.up('md')]: {
+            maxWidth: '50%',
+        }
+    },
     introTitleBar: {
         '&::before': {
             backgroundColor: '#C8CCD8',
@@ -102,9 +114,28 @@ export const useStyles = makeStyles(theme => ({
             height: 1,
             marginBottom: '2.4rem',
             width: 90
+        },
+        [theme.breakpoints.up('sm')]: {
+            '&::before': {
+                backgroundColor: 'transparent',
+                color: '#EEEFF4',
+                content: '"Welcome"',
+                fontSize: '8rem',
+                height: 'auto',
+                left: 0,
+                letterSpacing: 14,
+                position: 'absolute',
+                top: -43,
+                width: 'auto'
+            },
         }
     },
     introDescription: {
         color: '#60636D'
+    },
+    introIllustration: {
+        backgroundImage: `url(${welcomeDesktopImage})`,
+        height: 500,
+        width: 400
     }
 }));

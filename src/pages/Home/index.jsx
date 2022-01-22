@@ -79,13 +79,12 @@ const Home = () => {
                     />
                 </Carousel>
             </div>
-            <section className={classNames(classes.px, display.pb3, display.pt3, display.mt2)}>
-                <div>
-                    <Hidden smUp>
-                        <Typography component="h2" variant="h4" className={classNames(classes.introTitleBar, text.font7)}>
-                            Welcome to<br />Arch Studio
-                        </Typography>
-                    </Hidden>
+            <section className={classNames(classes.px, display.pb3, display.pt3, display.mt2, display.alignCenter,
+                classes.welcomeSection, display.justifyEnd, display.relative, responsive.mdMt3)}>
+                <div className={classNames(classes.welcomeContent, responsive.mdMr3)}>
+                    <Typography component="h2" variant="h4" className={classNames(classes.introTitleBar, text.font7)}>
+                        Welcome to<br />Arch Studio
+                    </Typography>
                     <Typography className={classNames(classes.introDescription, display.mt2, text.rem9)}>
                         We have a unique network and skillset to help bring your projects to life. Our small team of highly skilled individuals combined with our large network put us in a strong position to deliver exceptional results.
                     </Typography>
@@ -96,6 +95,9 @@ const Home = () => {
                         We work closely with our clients so that we understand the intricacies of each project. This allows us to work in harmony the surrounding area to create truly stunning projects that will stand the test of time.
                     </Typography>
                 </div>
+                <Hidden mdDown>
+                    <div className={classNames(bg.cover, bg.center, bg.noRepeat, classes.introIllustration)}></div>
+                </Hidden>
             </section>
         </main>
     )
