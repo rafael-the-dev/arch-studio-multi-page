@@ -6,7 +6,7 @@ import { useStyles } from './styles'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
 import ImageCard from '../../components/ImageCard';
 
 import delsolImage from '../../assets/images/portfolio/mobile/image-del-sol.jpg'
@@ -60,6 +60,29 @@ const Home = () => {
             </button>
         );
     }, [ classes, display, text ]);
+
+    const projectsCards = useMemo(() => (
+        <>
+            <ImageCard 
+                desktopImage={delsolDesktopImage}
+                mobileImage={delsolImage}
+                tabletImage={delsolTabletImage}
+                title="Project Del Sol"
+            />
+            <ImageCard 
+                desktopImage={towerDesktopImage}
+                mobileImage={towerImage}
+                tabletImage={towerTabletImage}
+                title="228B Tower"
+            />
+            <ImageCard 
+                desktopImage={prototypeDesktopImage}
+                mobileImage={prototypeImage}
+                tabletImage={prototypeTabletImage}
+                title="Le Prototype"
+            />
+        </>
+    ), [])
 
 
     return (
@@ -129,7 +152,7 @@ const Home = () => {
                 </Link>
             </section>
             <section className={classNames(display.flex, display.alignStretch, display.justifyBetween, classes.px,
-                display.mb3, display.flexColumn, display.pb3)}>
+                display.mb3, display.flexColumn, display.pb3, responsive.mdPl0, responsive.mdPr0)}>
                 <div className={classNames(display.flex, display.alignCenter, display.justifyBetween, display.w100,
                     display.mb2)}>
                     <Typography component="h2" variant="h4" className={classNames(text.font7, classes.smallTeamSectionTitle)}>
@@ -146,26 +169,16 @@ const Home = () => {
                         </Link>
                     </Hidden>
                 </div>
-                <ImageList cols={1} >
-                    <ImageCard 
-                        desktopImage={delsolImage}
-                        mobileImage={delsolTabletImage}
-                        tabletImage={delsolDesktopImage}
-                        title="Project Del Sol"
-                    />
-                    <ImageCard 
-                        desktopImage={towerImage}
-                        mobileImage={towerTabletImage}
-                        tabletImage={towerDesktopImage}
-                        title="228B Tower"
-                    />
-                    <ImageCard 
-                        desktopImage={prototypeImage}
-                        mobileImage={prototypeTabletImage}
-                        tabletImage={prototypeDesktopImage}
-                        title="Le Prototype"
-                    />
-                </ImageList>
+                <Hidden mdUp>
+                    <ImageList cols={1} gap={30} >
+                        { projectsCards }
+                    </ImageList>
+                </Hidden>
+                <Hidden mdDown>
+                    <ImageList cols={3} gap={30} >
+                        { projectsCards }
+                    </ImageList>
+                </Hidden>
                 <Hidden smUp>
                         <Link to="/portfolio" className={classNames(text.noUnderline, display.mt1, display.w100)}>
                             <Button 
