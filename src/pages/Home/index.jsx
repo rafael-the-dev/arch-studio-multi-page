@@ -1,4 +1,4 @@
-import { Button, Hidden, Typography } from '@mui/material'
+import { Button, Hidden, ImageList , Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames';
 import { useBackground, useDisplay, useResponsive, useTypography } from '../../styles';
@@ -7,6 +7,21 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import { useCallback, useEffect, useRef } from 'react'
+import ImageCard from '../../components/ImageCard';
+
+import delsolImage from '../../assets/images/portfolio/mobile/image-del-sol.jpg'
+import towerImage from '../../assets/images/portfolio/mobile/image-228b.jpg'
+import prototypeImage from '../../assets/images/portfolio/mobile/image-prototype.jpg'
+
+
+import delsolTabletImage from '../../assets/images/portfolio/tablet/image-del-sol.jpg'
+import towerTabletImage from '../../assets/images/portfolio/tablet/image-228b.jpg'
+import prototypeTabletImage from '../../assets/images/portfolio/tablet/image-prototype.jpg'
+
+
+import delsolDesktopImage from '../../assets/images/portfolio/desktop/image-del-sol.jpg'
+import towerDesktopImage from '../../assets/images/portfolio/desktop/image-228b.jpg'
+import prototypeDesktopImage from '../../assets/images/portfolio/desktop/image-prototype.jpg'
 
 const Home = () => {
     const bg = useBackground();
@@ -112,6 +127,55 @@ const Home = () => {
                         About us
                     </Button>
                 </Link>
+            </section>
+            <section className={classNames(display.flex, display.alignStretch, display.justifyBetween, classes.px,
+                display.mb3, display.flexColumn, display.pb3)}>
+                <div className={classNames(display.flex, display.alignCenter, display.justifyBetween, display.w100,
+                    display.mb2)}>
+                    <Typography component="h2" variant="h4" className={classNames(text.font7, classes.smallTeamSectionTitle)}>
+                        Featured
+                    </Typography>
+                    <Hidden smDown>
+                        <Link to="/portfolio" className={classNames(text.noUnderline, display.mt2)}>
+                            <Button 
+                                endIcon={<ArrowForwardIcon />}
+                                variant="contained"
+                                className={classNames(classes.heroButton)}>
+                                See all
+                            </Button>
+                        </Link>
+                    </Hidden>
+                </div>
+                <ImageList cols={1} >
+                    <ImageCard 
+                        desktopImage={delsolImage}
+                        mobileImage={delsolTabletImage}
+                        tabletImage={delsolDesktopImage}
+                        title="Project Del Sol"
+                    />
+                    <ImageCard 
+                        desktopImage={towerImage}
+                        mobileImage={towerTabletImage}
+                        tabletImage={towerDesktopImage}
+                        title="228B Tower"
+                    />
+                    <ImageCard 
+                        desktopImage={prototypeImage}
+                        mobileImage={prototypeTabletImage}
+                        tabletImage={prototypeDesktopImage}
+                        title="Le Prototype"
+                    />
+                </ImageList>
+                <Hidden smUp>
+                        <Link to="/portfolio" className={classNames(text.noUnderline, display.mt1, display.w100)}>
+                            <Button 
+                                endIcon={<ArrowForwardIcon />}
+                                variant="contained"
+                                className={classNames(classes.heroButton, display.w100)}>
+                                See all
+                            </Button>
+                        </Link>
+                    </Hidden>
             </section>
         </main>
     )
