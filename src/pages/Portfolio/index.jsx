@@ -54,84 +54,84 @@ const Portfolio = () => {
             mobileImage: seraphImage,
             tabletImage: seraphTabletImage,
             title: 'Seraph Station',
-            date: ''
+            date: 'September 2019'
         },
         {
             desktopImage: eeboxDesktopImage,
             mobileImage: eeboxImage,
             tabletImage: eeboxTabletImage,
             title: 'Eebox Building',
-            date: ''
+            date: 'August 2017'
         },
         {
             desktopImage: federalDesktopImage,
             mobileImage: federalImage,
             tabletImage: federalTabletImage,
             title: 'Federal II Tower',
-            date: ''
+            date: 'March 2017'
         },
         {
             desktopImage: delsolDesktopImage,
             mobileImage: delsolImage,
             tabletImage: delsolTabletImage,
             title: 'Project Del Sol',
-            date: ''
+            date: 'January 2016'
         },
         {
             desktopImage: prototypeDesktopImage,
             mobileImage: prototypeImage,
             tabletImage: prototypeTabletImage,
             title: 'Le Prototype',
-            date: ''
+            date: 'October 2015'
         },
         {
             desktopImage: towerDesktopImage,
             mobileImage: towerImage,
             tabletImage: towerTabletImage,
             title: '228B Tower',
-            date: ''
+            date: 'April 2015'
         },
         {
             desktopImage: edelweissDesktopImage,
             mobileImage: edelweissImage,
             tabletImage: edelweissTabletImage,
             title: 'Grand Edelweiss Hotel',
-            date: ''
+            date: 'December 2013'
         },
         {
             desktopImage: netcryDesktopImage,
             mobileImage: netcryImage,
             tabletImage: netcryTabletImage,
             title: 'Netcry Tower',
-            date: ''
+            date: 'August 2012'
         },
         {
             desktopImage: hypersDesktopImage,
             mobileImage: hypersImage,
             tabletImage: hypersTabletImage,
             title: 'Hypers',
-            date: ''
+            date: 'January 2012'
         },
         {
             desktopImage: sxivDesktopImage,
             mobileImage: sxivImage,
             tabletImage: sxivTabletImage,
             title: 'SXIV Tower',
-            date: ''
+            date: 'March 2011'
         },
         {
             desktopImage: trinityDesktopImage,
             mobileImage: trinityImage,
             tabletImage: trinityTabletImage,
             title: 'Trinity Bank Tower',
-            date: ''
+            date: 'September 2010'
         },
         {
             desktopImage: paramourDesktopImage,
             mobileImage: paramourImage,
             tabletImage: paramourTabletImage,
             title: 'Project Paramour',
-            date: ''
+            date: 'February 2008'
         },
     ], []);
 

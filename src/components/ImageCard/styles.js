@@ -41,5 +41,8 @@ export const useStyles = makeStyles(theme => ({
                 content: '"3"'
             }
         },
+    },
+    date: {
+        marginTop: '.6rem'
     }
 }));

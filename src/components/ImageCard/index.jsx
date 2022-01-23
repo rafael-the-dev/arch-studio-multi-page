@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { useBackground, useDisplay, useResponsive, useTypography } from '../../styles';
 import { useStyles } from './styles'
 
-const ImageCard = ({ desktopImage, index, mobileImage, tabletImage, title }) => {
+const ImageCard = ({ desktopImage, date, index, mobileImage, tabletImage, title }) => {
     const classes = useStyles();
     const display = useDisplay();
     const text = useTypography();
@@ -43,7 +43,7 @@ const ImageCard = ({ desktopImage, index, mobileImage, tabletImage, title }) => 
             </div>
             <ImageListItemBar
                 title={title}
-                subtitle={(
+                subtitle={date ? <time className={classNames(classes.date, display.block)}>{ date }</time> : (
                     <Link to="/projects" className={classNames(text.noUnderline, text.textLight)}>
                         View all Projects</Link>
                 )}
