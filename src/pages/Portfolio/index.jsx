@@ -148,7 +148,7 @@ const Portfolio = () => {
     ), [ list ]);
 
     return (
-        <main className={classNames(display.px, display.pb3, display.pt3)}>
+        <main className={classNames(display.px, display.pb3, display.pt1, display.mb3)}>
             <Hidden mdUp>
                 <ImageList cols={1} gap={30} >
                     { cardsContainer }
