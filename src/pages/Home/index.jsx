@@ -68,18 +68,21 @@ const Home = () => {
                 mobileImage={delsolImage}
                 tabletImage={delsolTabletImage}
                 title="Project Del Sol"
+                index={1}
             />
             <ImageCard 
                 desktopImage={towerDesktopImage}
                 mobileImage={towerImage}
                 tabletImage={towerTabletImage}
                 title="228B Tower"
+                index={2}
             />
             <ImageCard 
                 desktopImage={prototypeDesktopImage}
                 mobileImage={prototypeImage}
                 tabletImage={prototypeTabletImage}
                 title="Le Prototype"
+                index={3}
             />
         </>
     ), [])

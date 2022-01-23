@@ -1,16 +1,21 @@
 import { Hidden, ImageListItem, ImageListItemBar } from '@mui/material';
 import classNames from 'classnames';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom'
 import { useBackground, useDisplay, useResponsive, useTypography } from '../../styles';
 import { useStyles } from './styles'
 
-const ImageCard = ({ desktopImage, mobileImage, tabletImage, title }) => {
+const ImageCard = ({ desktopImage, index, mobileImage, tabletImage, title }) => {
     const classes = useStyles();
     const display = useDisplay();
     const text = useTypography();
+
+    const indexs = useRef([ classes.first, classes.second, classes.third ]);
+
     return (
         <ImageListItem >
-            <div className={classNames(classes.imageContainer, display.w100)}>
+            <div className={classNames(classes.imageContainer, display.w100, display.relative,
+                 Boolean(index) ? classNames(indexs.current[index - 1], classes.index) : '')}>
                 <Hidden smUp>
                     <img
                         src={mobileImage}
