@@ -61,11 +61,12 @@ const AboutPage = () => {
                 </Hidden>
             </section>
             <section className={classNames(globalStyles.px, display.flex, display.flexColumn, 
-                display.mdJustifyBetween)}>
-                <Typography component="h2" variant="h4" className={classNames(globalStyles.introTitleBar, text.font7)}>
+                display.justifyBetween, responsive.mdRow, responsive.mdPl0, responsive.mdPr0)}>
+                <Typography component="h2" variant="h4" className={classNames(globalStyles.introTitleBar, 
+                    text.font7, classes.leadersTitle)}>
                     The<br/>Leaders
                 </Typography>
-                <div className={classNames(classes.leadersGrid)}>
+                <div className={classNames(classes.leadersGrid, display.mt2)}>
                     <ProfileCard 
                         image={avatarJake}
                         name="Jake Richards"

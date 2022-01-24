@@ -29,6 +29,20 @@ export const useStyles = makeStyles(theme => ({
         display: 'grid',
         gridRowGap: 30,
         gridTemplateColumns: '100%',
-        gridTemplateRows: 'auto auto auto auto'
+        gridTemplateRows: 'auto auto auto auto',
+        [theme.breakpoints.up('sm')]: {
+            gridGap: '10px 2%',
+            gridTemplateColumns: '48% 48%',
+            gridTemplateRows: 'auto auto',
+
+        },
+        [theme.breakpoints.up('md')]: {
+            width: '60%'
+        }
+    },
+    leadersTitle: {
+        '&::before': {
+            //cont
+        }
     }
 }));

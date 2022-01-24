@@ -5,16 +5,17 @@ import classNames from 'classnames';
 import { useBackground, useDisplay, useGlobalStyles, useResponsive, useTypography } from '../../../styles';
 
 const ProfileCard = ({ image, name, role }) => {
+    const display = useDisplay();
     const text = useTypography();
 
     return (
-        <Card component="article">
+        <Card elevation={0} component="article">
             <CardMedia
                 component="img"
                 image={ image }
                 alt={ name }
             />
-            <CardContent>
+            <CardContent classes={{ root: classNames(display.pb0)}}>
                 <Typography component="h3" variant="h5" className={classNames(text.font7)}>
                     { name }
                 </Typography>
