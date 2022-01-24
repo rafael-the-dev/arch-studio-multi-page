@@ -66,6 +66,11 @@ export const useResponsive = makeStyles(theme => ({
             alignItems: 'flex-start !important'
         }
     },
+    mdAlignEnd: {
+        [theme.breakpoints.up('md')]: {
+            alignItems: 'flex-end !important'
+        }
+    },
     mdBlock: {
         [theme.breakpoints.up('md')]: {
             display: 'block !important'

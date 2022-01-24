@@ -15,7 +15,8 @@ const AboutPage = () => {
 
     return (
         <main className={classNames(globalStyles.main)}>
-            <section className={classNames(display.flex, display.flexColumn, )}>
+            <section className={classNames(display.flex, display.flexColumn, responsive.mdRow,
+                responsive.mdAlignEnd, display.relative, globalStyles.hero)}>
                 <div className={classNames(bg.center, bg.cover, bg.noRepeat, globalStyles.heroImageContainer,
                     classes.hero)}></div>
                 <div className={classNames(display.pb2, display.pt2, globalStyles.px, globalStyles.heroContent,

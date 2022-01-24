@@ -12,6 +12,9 @@ export const useGlobalStyles = makeStyles(theme => ({
         }
     },
     hero: {
+        [theme.breakpoints.up('md')]: {
+            marginBottom: '3rem'
+        }
     },
     heroImageContainer: {
         height: 250,
@@ -20,6 +23,10 @@ export const useGlobalStyles = makeStyles(theme => ({
         },
         [theme.breakpoints.up('md')]: {
             height: 500,
+            width: 500
+        },
+        [theme.breakpoints.up(1100)]: {
+            width: 600
         }
     },
     px: {
@@ -30,12 +37,12 @@ export const useGlobalStyles = makeStyles(theme => ({
         background: '#FFF',//'#F2F2F2',
         boxSizing: 'border-box',
         position: 'relative',
-        transform: 'translate(0px, -29%)',
+        transform: 'translate(0, -29%)',
         width: '90%',
         [theme.breakpoints.up('sm')]: {
             alignSelf: 'flex-end',
             paddingTop: '8rem !important',
-            transform: 'translate(0px, -100%)',
+            transform: 'translate(0, -100%)',
             '&::before': {
                 color: '#EEEFF4',
                 display: 'block',
@@ -47,6 +54,16 @@ export const useGlobalStyles = makeStyles(theme => ({
                 top: 0
             }
         },
+        [theme.breakpoints.up('md')]: {
+            bottom: 0,
+            maxWidth: '70%',
+            position: 'absolute',
+            right: 0, 
+            transform: 'translate(0, 0)',
+        },
+        [theme.breakpoints.up(1100)]: {
+            maxWidth: '60%',
+        }
     },
     heroContentTitle: {
         [theme.breakpoints.up('sm')]: {
