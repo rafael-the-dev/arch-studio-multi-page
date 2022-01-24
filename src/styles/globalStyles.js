@@ -80,5 +80,33 @@ export const useGlobalStyles = makeStyles(theme => ({
     },
     heroContentDescription: {
         color: '#60636D'
-    }
+    },
+    welcomeSection: {
+        [theme.breakpoints.up('md')]: {
+            display: 'flex',
+            paddingRight: 0
+        }
+    },
+    welcomeContent: {
+        [theme.breakpoints.up('md')]: {
+            maxWidth: '50%',
+        }
+    },
+    introTitleBar: {
+        '&::before': {
+            backgroundColor: '#C8CCD8',
+            content: '""',
+            display: 'block',
+            height: 1,
+            marginBottom: '2.4rem',
+            width: 90
+        },
+    },
+    introDescription: {
+        color: '#60636D'
+    },
+    introIllustration: {
+        height: 500,
+        width: 400
+    },
 }));

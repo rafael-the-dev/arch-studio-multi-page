@@ -25,7 +25,7 @@ const App = () => {
                             <Header />
                             <Routes>
                                 <Route exact path="/portfolio" element={<PortfolioPage />} />
-                                <Route exact path="/about" element={<AboutPage />} />
+                                <Route exact path="/about-us" element={<AboutPage />} />
                                 <Route exact path="/" element={<HomePage />} />
                             </Routes>
                             <Footer />
