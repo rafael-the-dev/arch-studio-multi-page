@@ -12,9 +12,7 @@ const App = () => {
     const HomePage = loadable(() => import(/* webpackChunkName: "HomePage" */ '../Home'));
     const PortfolioPage = loadable(() => import(/* webpackChunkName: "PortfolioPage" */ '../Portfolio'));
     const AboutPage = loadable(() => import(/* webpackChunkName: "AboutPage" */ '../About'));
-    //const LocationPage = loadable(() => import(/* webpackChunkName: "LocationPage" */ '../Location'));
-    //const ContactPage = loadable(() => import(/* webpackChunkName: "ContactPage" */ '../Contact'));
-    //const Services = loadable(() => import(/* webpackChunkName: "Services" */ '../Services'));
+    const ContactPage = loadable(() => import(/* webpackChunkName: "ContactPage" */ '../Contact'));
 
     return (
         <>
@@ -26,6 +24,7 @@ const App = () => {
                             <Routes>
                                 <Route exact path="/portfolio" element={<PortfolioPage />} />
                                 <Route exact path="/about-us" element={<AboutPage />} />
+                                <Route exact path="/contact" element={<ContactPage />} />
                                 <Route exact path="/" element={<HomePage />} />
                             </Routes>
                             <Footer />
