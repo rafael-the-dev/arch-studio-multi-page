@@ -41,5 +41,10 @@ export const useStyles = makeStyles(theme => ({
         '& label': {
             color: '#C8CCD8 !important'
         }
+    },
+    formButton: {
+        backgroundColor: '#000',
+        padding: '.6rem .9rem',
+        marginLeft: 'auto !important'
     }
 }));

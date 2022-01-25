@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { useBackground, useDisplay, useGlobalStyles, useResponsive, useTypography } from '../../styles';
 import { useStyles } from './styles'
 import { TextField, Typography } from '@mui/material'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const Contact = () => {
     const bg = useBackground();
@@ -31,37 +32,48 @@ const Contact = () => {
                 </div>
             </section>
             <div className={classNames(classes.map, display.mb3)}></div>
-            <form className={classNames(globalStyles.px, display.mb3, display.pb3)}>
-                <fieldset>
-                    <Typography component="fieldset" variant="h4" className={classNames(classes.leadersTitle, 
-                        text.font7, classes.leadersTitle)}>
-                        Connect<br/>with us
-                    </Typography>
-                    <div className={classNames(display.mt2)}>
-                        <TextField 
-                            classes={{ root: classNames(classes.textFieldRoot)}}
-                            className={classNames(display.mb1)}
-                            fullWidth
-                            label="Name" 
-                            variant="standard" 
-                        />
-                        <TextField 
-                            classes={{ root: classNames(classes.textFieldRoot)}}
-                            className={classNames(display.mb1)}
-                            fullWidth
-                            label="Email" 
-                            variant="standard" 
-                        />
-                        <TextField 
-                            classes={{ root: classNames(classes.textFieldRoot)}}
-                            className={classNames()}
-                            fullWidth
-                            label="Message" 
-                            variant="standard" 
-                        />
-                    </div>
-                </fieldset>
-            </form>
+            <div className={classNames(globalStyles.px, display.mb3, display.pb3, responsive.mdMt3,
+                responsive.mdPl0, responsive.mdPr0)}>
+                <form>
+                    <fieldset className={classNames(display.flex, display.flexColumn, display.justifyBetween,
+                        responsive.mdRow)}>
+                        <Typography component="fieldset" variant="h4" className={classNames(classes.leadersTitle, 
+                            text.font7, classes.leadersTitle)}>
+                            Connect<br/>with us
+                        </Typography>
+                        <div className={classNames(display.mt2, responsive.mdMt0)}>
+                            <TextField 
+                                classes={{ root: classNames(classes.textFieldRoot)}}
+                                className={classNames(display.mb1)}
+                                fullWidth
+                                label="Name" 
+                                variant="standard" 
+                            />
+                            <TextField 
+                                classes={{ root: classNames(classes.textFieldRoot)}}
+                                className={classNames(display.mb1)}
+                                fullWidth
+                                label="Email" 
+                                variant="standard" 
+                            />
+                            <TextField 
+                                classes={{ root: classNames(classes.textFieldRoot)}}
+                                className={classNames()}
+                                fullWidth
+                                label="Message" 
+                                multiline
+                                maxRows={6}
+                                rows={3}
+                                variant="standard" 
+                            />
+                            <button className={classNames(display.borderNone, display.outlineNone, 
+                                display.block, classes.formButton)}>
+                                <ArrowForwardIcon className={classNames(text.textLight)} />
+                            </button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
         </main>
     );
 };
