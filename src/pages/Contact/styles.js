@@ -36,5 +36,10 @@ export const useStyles = makeStyles(theme => ({
             backgroundImage: `url(${mapDesktopImage})`,
             height: 420,
         }
+    },
+    textFieldRoot: {
+        '& label': {
+            color: '#C8CCD8 !important'
+        }
     }
 }));

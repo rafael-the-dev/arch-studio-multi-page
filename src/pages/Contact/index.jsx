@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useBackground, useDisplay, useGlobalStyles, useResponsive, useTypography } from '../../styles';
 import { useStyles } from './styles'
-import { Hidden, Typography } from '@mui/material'
+import { TextField, Typography } from '@mui/material'
 
 const Contact = () => {
     const bg = useBackground();
@@ -31,6 +31,37 @@ const Contact = () => {
                 </div>
             </section>
             <div className={classNames(classes.map, display.mb3)}></div>
+            <form className={classNames(globalStyles.px, display.mb3, display.pb3)}>
+                <fieldset>
+                    <Typography component="fieldset" variant="h4" className={classNames(classes.leadersTitle, 
+                        text.font7, classes.leadersTitle)}>
+                        Connect<br/>with us
+                    </Typography>
+                    <div className={classNames(display.mt2)}>
+                        <TextField 
+                            classes={{ root: classNames(classes.textFieldRoot)}}
+                            className={classNames(display.mb1)}
+                            fullWidth
+                            label="Name" 
+                            variant="standard" 
+                        />
+                        <TextField 
+                            classes={{ root: classNames(classes.textFieldRoot)}}
+                            className={classNames(display.mb1)}
+                            fullWidth
+                            label="Email" 
+                            variant="standard" 
+                        />
+                        <TextField 
+                            classes={{ root: classNames(classes.textFieldRoot)}}
+                            className={classNames()}
+                            fullWidth
+                            label="Message" 
+                            variant="standard" 
+                        />
+                    </div>
+                </fieldset>
+            </form>
         </main>
     );
 };
