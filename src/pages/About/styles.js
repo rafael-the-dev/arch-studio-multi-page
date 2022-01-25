@@ -41,8 +41,8 @@ export const useStyles = makeStyles(theme => ({
         }
     },
     leadersTitle: {
-        '&::before': {
-            //cont
+        [theme.breakpoints.up('sm')]: {
+            fontSize: '2.8rem !important',
         }
     }
 }));
