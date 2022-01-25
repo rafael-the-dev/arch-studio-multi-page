@@ -30,6 +30,7 @@ const Contact = () => {
                     </Typography>
                 </div>
             </section>
+            <div className={classNames(classes.map, display.mb3)}></div>
         </main>
     );
 };
