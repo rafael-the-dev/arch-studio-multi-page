@@ -46,5 +46,13 @@ export const useStyles = makeStyles(theme => ({
         backgroundColor: '#000',
         padding: '.6rem .9rem',
         marginLeft: 'auto !important'
+    },
+    emailSuggestion: {
+        color: 'red',
+        marginLeft: 3
+    },
+    emailSuggestionHighlight: {
+        color: '#000',
+        textDecoration: 'underline'
     }
 }));

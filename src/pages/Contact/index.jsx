@@ -3,6 +3,9 @@ import { useBackground, useDisplay, useGlobalStyles, useResponsive, useTypograph
 import { useStyles } from './styles'
 import { TextField, Typography } from '@mui/material'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useForm, Controller  } from "react-hook-form";
+import { useCallback, useMemo, useState } from 'react';
+import Mailcheck from "../../assets/js/mailcheck";
 
 const Contact = () => {
     const bg = useBackground();
@@ -11,6 +14,82 @@ const Contact = () => {
     const globalStyles = useGlobalStyles();
     const responsive = useResponsive();
     const text = useTypography();
+
+    const [ emailSuggestions, setEmailSuggestions ] = useState('');
+
+    const { register, handleSubmit, formState: { errors }, reset, setError, control, setValue, clearErrors } = useForm({  mode: 'onBlur', 
+        reValidateMode: 'onBlur', shouldUnregister: false });
+
+    const handler = func => func();
+
+    const onSubmit = event => {
+        event.preventDefault();
+        if(!emailSuggestions) {
+            handler(handleSubmit(data => {
+                console.log(data)
+                reset();
+            }));
+        }
+    };
+
+    const requiredMessage = useMemo(() => 'This field is required', []);
+
+    const getEmailHelperText = type => {
+        let helperText = '';
+
+        if(type === 'required') {
+            helperText = requiredMessage;
+        } else if(type === 'pattern') {
+            helperText = 'Invalid email address';
+        }
+
+        return helperText;
+    };
+
+    const checkEmail = useCallback(event => {
+        const value = event.target.value;
+        if(value) {
+            clearErrors('email');
+            let emailSuggestion = '';
+            const domains = ['gmail.com', 'aol.com', 'hotmail.com', 'yahoo.com', 'outlook.com', 'live.com', 'msn.com'];
+            const topLevelDomains = ["com", "net", "org"];
+            const emailPattern = new RegExp('[a-zA-z0-9]{2,30}@[a-zA-z]{3,15}.com?(.[a-z]{2})?', 'i') ;
+            
+            Mailcheck.run({
+                email: value,
+                domains: domains,                       // optional
+                topLevelDomains: topLevelDomains,       // optional
+                //secondLevelDomains: secondLevelDomains, // optional
+                suggested: function(suggestion) {
+                    emailSuggestion = suggestion.full;
+                }
+            });
+            if((!emailSuggestion) && (emailPattern.test(value))) {
+                clearErrors('email');
+                setEmailSuggestions(e => '');
+            } else {
+                setError('email', { type: 'pattern', message: 'Invalid email address'});
+                setEmailSuggestions(e => emailSuggestion);
+            }
+        } else {
+            setError('email', { type: 'required', message: requiredMessage })
+        }
+    }, [  setError, clearErrors, requiredMessage ]);
+
+    const labelClickHandler = useCallback(async() => {
+        setValue('email', emailSuggestions);
+        clearErrors('email');
+        setEmailSuggestions(e => '');
+    }, [ setValue, clearErrors, setEmailSuggestions, emailSuggestions ]);
+
+    const suggestionLabelMemo = useMemo(() => (
+        <label 
+            className={classNames(display.block, classes.emailSuggestion, display.w100)}  
+            onClick={labelClickHandler}>
+            Do you mean <em className={classNames(classes.emailSuggestionHighlight)}>{emailSuggestions}</em>
+        </label>
+    ), [ display, classes, emailSuggestions, labelClickHandler]);
+
 
     return (
         <main className={classNames(globalStyles.main)}>
@@ -34,7 +113,7 @@ const Contact = () => {
             <div className={classNames(classes.map, display.mb3)}></div>
             <div className={classNames(globalStyles.px, display.mb3, display.pb3, responsive.mdMt3,
                 responsive.mdPl0, responsive.mdPr0)}>
-                <form>
+                <form  onSubmit={onSubmit} autoComplete="off" >
                     <fieldset className={classNames(display.flex, display.flexColumn, display.justifyBetween,
                         responsive.mdRow)}>
                         <Typography component="fieldset" variant="h4" className={classNames(classes.leadersTitle, 
@@ -42,31 +121,66 @@ const Contact = () => {
                             Connect<br/>with us
                         </Typography>
                         <div className={classNames(display.mt2, responsive.mdMt0)}>
-                            <TextField 
-                                classes={{ root: classNames(classes.textFieldRoot)}}
-                                className={classNames(display.mb1)}
-                                fullWidth
-                                label="Name" 
-                                variant="standard" 
+                        <Controller
+                            control={control} 
+                            name="name"
+                            defaultValue=""
+                            rules={{ required: true }}
+                                render={({ field }) => (
+                                    <TextField 
+                                        classes={{ root: classNames(classes.textFieldRoot)}}
+                                        className={classNames(display.mb1)}
+                                        fullWidth
+                                        label="Name" 
+                                        variant="standard" 
+                                        error={errors.name?.type === 'required'}
+                                        helperText={errors.name?.type === 'required' ? requiredMessage : ''}
+                                        { ...field }
+                                    />
+                                )}
                             />
-                            <TextField 
-                                classes={{ root: classNames(classes.textFieldRoot)}}
-                                className={classNames(display.mb1)}
-                                fullWidth
-                                label="Email" 
-                                variant="standard" 
+                            <Controller
+                                control={control} 
+                                name="email"
+                                defaultValue=""
+                                rules={{ required: true, pattern: /[a-zA-z0-9]{2,30}@[a-zA-z]{3,15}\.com?(\.[a-z]{2})?/ }}
+                                render={({ field }) => ( //{ ... register('email', { required: true }) }
+                                    <TextField 
+                                        type="email"
+                                        label="Email"
+                                        fullWidth
+                                        variant="standard"
+                                        classes={{ root: classNames(classes.textFieldRoot)}}
+                                        className={classNames(display.mb1)}
+                                        error={getEmailHelperText(errors.email?.type) ? true : false}
+                                        helperText={getEmailHelperText(errors.email?.type)}
+                                        { ...field }
+                                        onBlur={checkEmail}
+                                    />
+                                )}
                             />
-                            <TextField 
-                                classes={{ root: classNames(classes.textFieldRoot)}}
-                                className={classNames()}
-                                fullWidth
-                                label="Message" 
-                                multiline
-                                maxRows={6}
-                                rows={3}
-                                variant="standard" 
+                            { emailSuggestions ? suggestionLabelMemo : '' }
+                            <Controller
+                                control={control} 
+                                name="message"
+                                defaultValue=""
+                                rules={{ required: true }}
+                                render={({ field }) => (
+                                    <TextField 
+                                        classes={{ root: classNames(classes.textFieldRoot)}}
+                                        className={classNames()}
+                                        fullWidth
+                                        label="Message" 
+                                        multiline
+                                        rows={3}
+                                        variant="standard" 
+                                        error={errors.message?.type === 'required'}
+                                        helperText={errors.message?.type === 'required' ? requiredMessage : ''}
+                                        { ...field }
+                                    />
+                                )}
                             />
-                            <button className={classNames(display.borderNone, display.outlineNone, 
+                            <button type="submit" className={classNames(display.borderNone, display.outlineNone, 
                                 display.block, classes.formButton)}>
                                 <ArrowForwardIcon className={classNames(text.textLight)} />
                             </button>
