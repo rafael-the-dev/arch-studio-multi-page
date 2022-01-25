@@ -2,7 +2,7 @@ import { Card, CardActions, CardContent, CardMedia, Hidden, IconButton, Typograp
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import classNames from 'classnames';
-import { useBackground, useDisplay, useGlobalStyles, useResponsive, useTypography } from '../../../styles';
+import { useDisplay, useResponsive, useTypography } from '../../../styles';
 import { useStyles } from './styles'
 import { useMemo } from 'react';
 

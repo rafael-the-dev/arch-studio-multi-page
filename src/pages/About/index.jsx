@@ -1,5 +1,3 @@
-
-import { Link } from 'react-router-dom'
 import classNames from 'classnames';
 import { useBackground, useDisplay, useGlobalStyles, useResponsive, useTypography } from '../../styles';
 import { useStyles } from './styles'
