@@ -111,43 +111,49 @@ const Contact = () => {
                 </div>
             </section>
             <section className={classNames(display.flex, display.flexColumn, display.justifyBetween,
-                globalStyles.px, display.pb3, display.mb2)}>
+                globalStyles.px, display.pb3, display.mb2, responsive.mdRow, responsive.mdMt3, responsive.mdPt2,
+                responsive.mdPl0, responsive.mdPr0)}>
                 <Typography component="h2" variant="h4" className={classNames( 
                     text.font7, classes.leadersTitle)}>
                     Connect with us
                 </Typography>
-                <div className={classNames(display.flex, display.flexColumn, display.mt2)}>
-                    <article>
-                        <div className={classNames(display.flex, display.flexColumn, display.justifyBetween)}>
-                            <Typography component="h3" variant="h5" className={classNames(classes.lightDarkText,)}>
-                                Main Office
-                            </Typography>
+                <div className={classNames(display.flex, display.flexColumn, display.mt2, responsive.mdRow,
+                    responsive.mdMt0)}>
+                    <article className={classNames(responsive.mdMr3)}>
+                        <Typography component="h3" variant="h5" className={classNames(classes.lightDarkText,)}>
+                            Main Office
+                        </Typography>
+                        <div className={classNames(display.flex, display.flexColumn, display.justifyBetween,
+                            responsive.smRow, responsive.smAlignCenter, responsive.mdColumn, display.alignStart,
+                            responsive.mdAlignStart)}>
                             <Typography component="address"  className={classNames(classes.lightDarkText, text.rem9, 
                                 display.mt1, classes.address)}>
                                 Mail :	archone@mail.com<br/>Address :	1892  Chenoweth Drive TN<br/>Phone :	123-456-3451
                             </Typography>
+                            <Button
+                                className={classNames(text.textDark, display.pl0)}  
+                                endIcon={<ArrowForwardIcon />}>
+                                View on map
+                            </Button>
                         </div>
-                        <Button
-                            className={classNames(text.textDark, display.pl0)}  
-                            endIcon={<ArrowForwardIcon />}>
-                            View on map
-                        </Button>
                     </article>
-                    <article className={classNames(display.mt1)}>
-                        <div className={classNames(display.flex, display.flexColumn, display.justifyBetween)}>
-                            <Typography component="h3" variant="h5" className={classNames(classes.lightDarkText,)}>
-                                Office II
-                            </Typography>
+                    <article className={classNames(display.mt1, responsive.mdMt0, responsive.mdMl3)}>
+                        <Typography component="h3" variant="h5" className={classNames(classes.lightDarkText,)}>
+                            Office II
+                        </Typography>
+                        <div className={classNames(display.flex, display.flexColumn, display.justifyBetween,
+                            responsive.smRow, responsive.smAlignCenter, responsive.mdColumn, display.alignStart,
+                            responsive.mdAlignStart)}>
                             <Typography component="address"  className={classNames(classes.lightDarkText, text.rem9,
                                 display.mt1, classes.address)}>
                                 Mail :	archtwo@mail.com<br/>Address :	3399  Wines Lane TX<br/>Phone :	832-123-4321
                             </Typography>
+                            <Button
+                                className={classNames(text.textDark, display.pl0)}  
+                                endIcon={<ArrowForwardIcon />}>
+                                View on map
+                            </Button>
                         </div>
-                        <Button
-                            className={classNames(text.textDark, display.pl0)}  
-                            endIcon={<ArrowForwardIcon />}>
-                            View on map
-                        </Button>
                     </article>
                 </div>
             </section>
