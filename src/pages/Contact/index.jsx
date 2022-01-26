@@ -111,8 +111,8 @@ const Contact = () => {
                 </div>
             </section>
             <section className={classNames(display.flex, display.flexColumn, display.justifyBetween,
-                globalStyles.px, display.pb3, display.mb2, responsive.mdRow, responsive.mdMt3, responsive.mdPt2,
-                responsive.mdPl0, responsive.mdPr0)}>
+                globalStyles.px, display.pb3, display.mb2, responsive.mdRow, responsive.mdPt2,
+                responsive.mdPl0, responsive.mdPr0, responsive.smMb0, classes.locations)}>
                 <Typography component="h2" variant="h4" className={classNames( 
                     text.font7, classes.leadersTitle)}>
                     Connect with us
@@ -157,13 +157,13 @@ const Contact = () => {
                     </article>
                 </div>
             </section>
-            <div className={classNames(classes.map, display.mb3)}></div>
-            <div className={classNames(globalStyles.px, display.mb3, display.pb3, responsive.mdMt3,
-                responsive.mdPl0, responsive.mdPr0)}>
+            <div className={classNames(classes.map, display.mb3, responsive.smMb0, responsive.mdMt3, responsive.mdMb3)}></div>
+            <div className={classNames(globalStyles.px, display.mb3, display.pb3,
+                responsive.mdPl0, responsive.mdPr0, responsive.smMb0, classes.formContainer)}>
                 <form  onSubmit={onSubmit} autoComplete="off" >
                     <fieldset className={classNames(display.flex, display.flexColumn, display.justifyBetween,
                         responsive.mdRow)}>
-                        <Typography component="legend" variant="h4" className={classNames(classes.leadersTitle, 
+                        <Typography component="h2" variant="h4" className={classNames(classes.leadersTitle, 
                             text.font7, classes.leadersTitle)}>
                             Connect<br/>with us
                         </Typography>

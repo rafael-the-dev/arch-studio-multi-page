@@ -26,6 +26,15 @@ export const useStyles = makeStyles(theme => ({
             }
         },
     },
+    locations: {
+        [theme.breakpoints.up('sm')]: {
+            transform: 'translateY(-65%)'
+        },
+        [theme.breakpoints.up('md')]: {
+            marginTop: '6rem !important',
+            transform: 'translateY(0)'
+        },
+    },
     lightDarkText: {
         color: '#60636D'
     },
@@ -37,11 +46,22 @@ export const useStyles = makeStyles(theme => ({
         height: 350,
         [theme.breakpoints.up('sm')]: {
             backgroundImage: `url(${mapTabletImage})`,
+            transform: 'translateY(-58%)'
         },
         [theme.breakpoints.up('md')]: {
             backgroundImage: `url(${mapDesktopImage})`,
             height: 420,
+            transform: 'translateY(0)'
         }
+    },
+    formContainer: {
+        [theme.breakpoints.up('sm')]: {
+            transform: 'translateY(-13%)'
+        },
+        [theme.breakpoints.up('md')]: {
+            marginTop: '5rem !important',
+            transform: 'translateY(0)'
+        },
     },
     textFieldRoot: {
         '& label': {
