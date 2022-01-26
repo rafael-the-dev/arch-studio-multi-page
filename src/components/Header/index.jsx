@@ -36,7 +36,7 @@ const Header = () => {
                 </Link>
             </li>
         </>
-    ), [ classes, text ]);
+    ), [ classes, listItemClickHandler, text ]);
 
     return (
         <header className={classNames(classes.header, display.px, display.flex, display.alignCenter, display.justifyBetween,
