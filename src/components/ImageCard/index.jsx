@@ -2,7 +2,7 @@ import { Hidden, ImageListItem, ImageListItemBar } from '@mui/material';
 import classNames from 'classnames';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom'
-import { useBackground, useDisplay, useResponsive, useTypography } from '../../styles';
+import { useDisplay, useTypography } from '../../styles';
 import { useStyles } from './styles'
 
 const ImageCard = ({ desktopImage, date, index, mobileImage, tabletImage, title }) => {

@@ -17,7 +17,7 @@ const Contact = () => {
 
     const [ emailSuggestions, setEmailSuggestions ] = useState('');
 
-    const { register, handleSubmit, formState: { errors }, reset, setError, control, setValue, clearErrors } = useForm({  mode: 'onBlur', 
+    const { handleSubmit, formState: { errors }, reset, setError, control, setValue, clearErrors } = useForm({  mode: 'onBlur', 
         reValidateMode: 'onBlur', shouldUnregister: false });
 
     const handler = func => func();

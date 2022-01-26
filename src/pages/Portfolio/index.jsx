@@ -2,7 +2,7 @@ import { Hidden, ImageList } from '@mui/material';
 import { useMemo } from 'react'
 import ImageCard from '../../components/ImageCard';
 import classNames from 'classnames';
-import { useBackground, useDisplay, useResponsive, useTypography } from '../../styles';
+import { useDisplay } from '../../styles';
 
 import seraphImage from '../../assets/images/portfolio/mobile/image-seraph.jpg'
 import eeboxImage from '../../assets/images/portfolio/mobile/image-eebox.jpg'

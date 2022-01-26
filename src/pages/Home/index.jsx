@@ -6,7 +6,7 @@ import { useStyles } from './styles'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { useCallback, useEffect, useMemo, useRef } from 'react'
+import { useCallback, useMemo } from 'react'
 import ImageCard from '../../components/ImageCard';
 
 import delsolImage from '../../assets/images/portfolio/mobile/image-del-sol.jpg'
