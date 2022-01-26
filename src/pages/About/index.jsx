@@ -21,9 +21,9 @@ const AboutPage = () => {
         <main className={classNames(globalStyles.main)}>
             <section className={classNames(display.flex, display.flexColumn, responsive.mdRow,
                 responsive.mdAlignEnd, display.relative, globalStyles.hero)}>
-                <div className={classNames(bg.center, bg.cover, bg.noRepeat, globalStyles.heroImageContainer,
+                <div data-aos="fade-down-right"  data-aos-duration="3000" className={classNames(bg.center, bg.cover, bg.noRepeat, globalStyles.heroImageContainer,
                     classes.hero)}></div>
-                <div className={classNames(display.pb2, display.pt2, globalStyles.px, globalStyles.heroContent,
+                <div data-aos="fade-up-left"  data-aos-duration="3000" className={classNames(display.pb2, display.pt2, globalStyles.px, globalStyles.heroContent,
                     classes.heroContent)}>
                     <Typography component="h1" variant="h4" className={classNames(text.font7, 
                         globalStyles.heroContentTitle)}>
@@ -39,7 +39,7 @@ const AboutPage = () => {
             <section className={classNames(globalStyles.px, display.pb3, display.pt33, display.mt2, display.alignCenter,
                 globalStyles.welcomeSection, display.justifyEnd, display.relative, responsive.mdMt3,
                 responsive.mdJustifyBetween, responsive.mdPl0)}>
-                <div className={classNames(globalStyles.welcomeContent, responsive.mdMr3)}>
+                <div data-aos="fade-right"  data-aos-duration="3000" className={classNames(globalStyles.welcomeContent, responsive.mdMr3)}>
                     <Typography component="h2" variant="h4" className={classNames(globalStyles.introTitleBar, text.font7)}>
                         Welcome to<br />Arch Studio
                     </Typography>
@@ -54,18 +54,18 @@ const AboutPage = () => {
                     </Typography>
                 </div>
                 <Hidden mdDown>
-                    <div className={classNames(bg.cover, bg.center, bg.noRepeat, globalStyles.introIllustration,
+                    <div data-aos="fade-left"  data-aos-duration="3000" className={classNames(bg.cover, bg.center, bg.noRepeat, globalStyles.introIllustration,
                         classes.ourHeritageIllustration)}></div>
                 </Hidden>
             </section>
             <section className={classNames(globalStyles.px, display.flex, display.flexColumn, 
                 display.justifyBetween, responsive.mdRow, responsive.mdPl0, responsive.mdPr0, responsive.mdMt3,
                 responsive.mdMb3)}>
-                <Typography component="h2" variant="h4" className={classNames(classes.leadersTitle, 
+                <Typography  data-aos="fade-right"  data-aos-duration="3000" component="h2" variant="h4" className={classNames(classes.leadersTitle, 
                     text.font7, classes.leadersTitle)}>
                     The<br/>Leaders
                 </Typography>
-                <div className={classNames(classes.leadersGrid, display.mt2, responsive.mdMt0)}>
+                <div data-aos="fade-left"  data-aos-duration="3000" className={classNames(classes.leadersGrid, display.mt2, responsive.mdMt0)}>
                     <ProfileCard 
                         image={avatarJake}
                         name="Jake Richards"

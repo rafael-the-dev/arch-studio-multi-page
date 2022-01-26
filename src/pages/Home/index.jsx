@@ -85,12 +85,11 @@ const Home = () => {
                 index={3}
             />
         </>
-    ), [])
-
+    ), []);
 
     return (
         <main className={classNames(classes.main)}>
-            <div className={classNames(display.relative)}>
+            <div className={classNames(display.relative)} data-aos="fade-up" data-aos-duration="3000">
                 <Carousel 
                     autoPlay={true}
                     infiniteLoop={true}
@@ -121,7 +120,8 @@ const Home = () => {
                 </Carousel>
             </div>
             <section className={classNames(classes.px, display.pb3, display.pt3, display.mt2, display.alignCenter,
-                classes.welcomeSection, display.justifyEnd, display.relative, responsive.mdMt3)}>
+                classes.welcomeSection, display.justifyEnd, display.relative, responsive.mdMt3)}
+                data-aos="fade-up" data-aos-duration="3000">
                 <div className={classNames(classes.welcomeContent, responsive.mdMr3)}>
                     <Typography component="h2" variant="h4" className={classNames(classes.introTitleBar, text.font7)}>
                         Welcome to<br />Arch Studio
@@ -141,7 +141,8 @@ const Home = () => {
                 </Hidden>
             </section>
             <section className={classNames(classes.px, classes.smallTeamSection, bg.cover, bg.center, bg.noRepeat,
-                display.flex, display.flexColumn, display.justifyCenter, display.mt3, display.mb3)}>
+                display.flex, display.flexColumn, display.justifyCenter, display.mt3, display.mb3)}
+                data-aos="fade-up" data-aos-duration="3000">
                 <Typography component="h2" variant="h4" className={classNames(text.textLight, text.font7, classes.smallTeamSectionTitle)}>
                     Small team,<br/>big ideas
                 </Typography>
@@ -155,7 +156,8 @@ const Home = () => {
                 </Link>
             </section>
             <section className={classNames(display.flex, display.alignStretch, display.justifyBetween, classes.px,
-                display.mb3, display.flexColumn, display.pb3, responsive.mdPl0, responsive.mdPr0)}>
+                display.mb3, display.flexColumn, display.pb3, responsive.mdPl0, responsive.mdPr0)}
+                data-aos="fade-up" data-aos-duration="3000">
                 <div className={classNames(display.flex, display.alignCenter, display.justifyBetween, display.w100,
                     display.mb2)}>
                     <Typography component="h2" variant="h4" className={classNames(text.font7, classes.smallTeamSectionTitle)}>

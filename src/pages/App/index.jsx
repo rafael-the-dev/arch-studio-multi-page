@@ -3,6 +3,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { StylesProvider } from '@mui/styles';
 import { AppContextProvider } from '../../context/AppContext';
 import loadable from '@loadable/component';
+import { useEffect } from "react";
+import AOS from 'aos';
 
 const App = () => {
     const theme = createTheme();
@@ -13,6 +15,11 @@ const App = () => {
     const PortfolioPage = loadable(() => import(/* webpackChunkName: "PortfolioPage" */ '../Portfolio'));
     const AboutPage = loadable(() => import(/* webpackChunkName: "AboutPage" */ '../About'));
     const ContactPage = loadable(() => import(/* webpackChunkName: "ContactPage" */ '../Contact'));
+
+    
+    useEffect(() => {
+        AOS.init();
+    }, [ ]);
 
     return (
         <>

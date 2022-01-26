@@ -95,9 +95,9 @@ const Contact = () => {
         <main className={classNames(globalStyles.main)}>
             <section className={classNames(display.flex, display.flexColumn, responsive.mdRow,
                 responsive.mdAlignEnd, display.relative, globalStyles.hero)}>
-                <div className={classNames(bg.center, bg.cover, bg.noRepeat, globalStyles.heroImageContainer,
+                <div data-aos="fade-down-right"  data-aos-duration="3000" className={classNames(bg.center, bg.cover, bg.noRepeat, globalStyles.heroImageContainer,
                     classes.hero)}></div>
-                <div className={classNames(display.pb2, display.pt2, globalStyles.px, globalStyles.heroContent,
+                <div data-aos="fade-up-left"  data-aos-duration="3000" className={classNames(display.pb2, display.pt2, globalStyles.px, globalStyles.heroContent,
                     classes.heroContent)}>
                     <Typography component="h1" variant="h4" className={classNames(text.font7, 
                         globalStyles.heroContentTitle)}>
@@ -113,11 +113,11 @@ const Contact = () => {
             <section className={classNames(display.flex, display.flexColumn, display.justifyBetween,
                 globalStyles.px, display.pb3, display.mb2, responsive.mdRow, responsive.mdPt2,
                 responsive.mdPl0, responsive.mdPr0, responsive.smMb0, classes.locations)}>
-                <Typography component="h2" variant="h4" className={classNames( 
+                <Typography  data-aos="fade-right"  data-aos-duration="3000" component="h2" variant="h4" className={classNames( 
                     text.font7, classes.leadersTitle)}>
                     Connect with us
                 </Typography>
-                <div className={classNames(display.flex, display.flexColumn, display.mt2, responsive.mdRow,
+                <div  data-aos="fade-left"  data-aos-duration="3000" className={classNames(display.flex, display.flexColumn, display.mt2, responsive.mdRow,
                     responsive.mdMt0)}>
                     <article className={classNames(responsive.mdMr3)}>
                         <Typography component="h3" variant="h5" className={classNames(classes.lightDarkText,)}>
@@ -157,17 +157,17 @@ const Contact = () => {
                     </article>
                 </div>
             </section>
-            <div className={classNames(classes.map, display.mb3, responsive.smMb0, responsive.mdMt3, responsive.mdMb3)}></div>
+            <div data-aos="fade-up" data-aos-duration="3000" className={classNames(classes.map, display.mb3, responsive.smMb0, responsive.mdMt3, responsive.mdMb3)}></div>
             <div className={classNames(globalStyles.px, display.mb3, display.pb3,
                 responsive.mdPl0, responsive.mdPr0, responsive.smMb0, classes.formContainer)}>
                 <form  onSubmit={onSubmit} autoComplete="off" >
                     <fieldset className={classNames(display.flex, display.flexColumn, display.justifyBetween,
                         responsive.mdRow)}>
-                        <Typography component="h2" variant="h4" className={classNames(classes.leadersTitle, 
+                        <Typography  data-aos="fade-right"  data-aos-duration="3000" component="h2" variant="h4" className={classNames(classes.leadersTitle, 
                             text.font7, classes.leadersTitle)}>
                             Connect<br/>with us
                         </Typography>
-                        <div className={classNames(display.mt2, responsive.mdMt0)}>
+                        <div data-aos="fade-left"  data-aos-duration="3000" className={classNames(display.mt2, responsive.mdMt0)}>
                         <Controller
                             control={control} 
                             name="name"

@@ -150,12 +150,12 @@ const Portfolio = () => {
     return (
         <main className={classNames(display.px, display.pb3, display.pt1, display.mb3)}>
             <Hidden mdUp>
-                <ImageList cols={1} gap={30} >
+                <ImageList  data-aos="zoom-in" data-aos-duration="3000" cols={1} gap={30} >
                     { cardsContainer }
                 </ImageList>
             </Hidden>
             <Hidden mdDown>
-                <ImageList cols={3} gap={30} >
+                <ImageList  data-aos="zoom-in" data-aos-duration="3000" cols={3} gap={30} >
                     { cardsContainer }
                 </ImageList>
             </Hidden>
