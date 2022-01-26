@@ -16,19 +16,21 @@ const Header = () => {
 
     const [ openMenu, setOpenMenu ] = useState(false);
 
+    const listItemClickHandler = useCallback(() => setOpenMenu(false), []);
+
     const getList = useCallback(() => (
         <>
-            <li  className={classNames(classes.headerListItem)}>
+            <li onClick={listItemClickHandler} className={classNames(classes.headerListItem)}>
                 <Link to="/portfolio" className={classNames(text.noUnderline, text.uppercase)}>
                     Portfolio
                 </Link>
             </li>
-            <li  className={classNames(classes.headerListItem)}>
+            <li onClick={listItemClickHandler} className={classNames(classes.headerListItem)}>
                 <Link to="/about-us" className={classNames(text.noUnderline, text.uppercase)}>
                     About us
                 </Link>
             </li>
-            <li  className={classNames(classes.headerListItem)}>
+            <li onClick={listItemClickHandler} className={classNames(classes.headerListItem)}>
                 <Link to="/contact" className={classNames(text.noUnderline, text.uppercase)}>
                     Contact
                 </Link>
