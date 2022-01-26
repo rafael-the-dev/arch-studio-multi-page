@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useBackground, useDisplay, useGlobalStyles, useResponsive, useTypography } from '../../styles';
 import { useStyles } from './styles'
-import { TextField, Typography } from '@mui/material'
+import { Button, TextField, Typography } from '@mui/material'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useForm, Controller  } from "react-hook-form";
 import { useCallback, useMemo, useState } from 'react';
@@ -110,13 +110,54 @@ const Contact = () => {
                     </Typography>
                 </div>
             </section>
+            <section className={classNames(display.flex, display.flexColumn, display.justifyBetween,
+                globalStyles.px, display.pb3, display.mb2)}>
+                <Typography component="h2" variant="h4" className={classNames( 
+                    text.font7, classes.leadersTitle)}>
+                    Connect with us
+                </Typography>
+                <div className={classNames(display.flex, display.flexColumn, display.mt2)}>
+                    <article>
+                        <div className={classNames(display.flex, display.flexColumn, display.justifyBetween)}>
+                            <Typography component="h3" variant="h5" className={classNames(classes.lightDarkText,)}>
+                                Main Office
+                            </Typography>
+                            <Typography component="address"  className={classNames(classes.lightDarkText, text.rem9, 
+                                display.mt1, classes.address)}>
+                                Mail :	archone@mail.com<br/>Address :	1892  Chenoweth Drive TN<br/>Phone :	123-456-3451
+                            </Typography>
+                        </div>
+                        <Button
+                            className={classNames(text.textDark, display.pl0)}  
+                            endIcon={<ArrowForwardIcon />}>
+                            View on map
+                        </Button>
+                    </article>
+                    <article className={classNames(display.mt1)}>
+                        <div className={classNames(display.flex, display.flexColumn, display.justifyBetween)}>
+                            <Typography component="h3" variant="h5" className={classNames(classes.lightDarkText,)}>
+                                Office II
+                            </Typography>
+                            <Typography component="address"  className={classNames(classes.lightDarkText, text.rem9,
+                                display.mt1, classes.address)}>
+                                Mail :	archtwo@mail.com<br/>Address :	3399  Wines Lane TX<br/>Phone :	832-123-4321
+                            </Typography>
+                        </div>
+                        <Button
+                            className={classNames(text.textDark, display.pl0)}  
+                            endIcon={<ArrowForwardIcon />}>
+                            View on map
+                        </Button>
+                    </article>
+                </div>
+            </section>
             <div className={classNames(classes.map, display.mb3)}></div>
             <div className={classNames(globalStyles.px, display.mb3, display.pb3, responsive.mdMt3,
                 responsive.mdPl0, responsive.mdPr0)}>
                 <form  onSubmit={onSubmit} autoComplete="off" >
                     <fieldset className={classNames(display.flex, display.flexColumn, display.justifyBetween,
                         responsive.mdRow)}>
-                        <Typography component="fieldset" variant="h4" className={classNames(classes.leadersTitle, 
+                        <Typography component="legend" variant="h4" className={classNames(classes.leadersTitle, 
                             text.font7, classes.leadersTitle)}>
                             Connect<br/>with us
                         </Typography>

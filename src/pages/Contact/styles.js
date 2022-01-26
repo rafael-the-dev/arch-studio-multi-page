@@ -26,6 +26,12 @@ export const useStyles = makeStyles(theme => ({
             }
         },
     },
+    lightDarkText: {
+        color: '#60636D'
+    },
+    address: {
+        lineHeight: '1.7rem !important'
+    },
     map: {
         backgroundImage: `url(${mapImage})`,
         height: 350,
